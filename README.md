@@ -9,3 +9,6 @@ This app demonstrate the use of a number of fundamental components in UIKit and 
 <img src="https://github.com/eejahromi/FontsApp/blob/master/screenshots/landing.PNG" width="200" height="350">
 <img src="https://github.com/eejahromi/FontsApp/blob/master/screenshots/family.PNG" width="200" height="350">
 <img src="https://github.com/eejahromi/FontsApp/blob/master/screenshots/individual.PNG" width="200" height="350">
+
+
+inspired by Fonts in the Beginning iOS7 App Development book with some modifications such as navigationBar tint color and use of updated material instead of deprecated components such as UIAlertView.
