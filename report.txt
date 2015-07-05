@@ -1,0 +1,50 @@
+
+-another way of making sure the code gets initialized only once using a block
+
++(instancetype)sharedFavoritesList{
+    static FavoritesList *shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,^{
+        shared = [[self alloc]init];
+    });
+    return shared;
+}
+
+
+-when we call self.favorites the compiler will look in the interface (.h) for the
+property or method favorites so if we have a private property we should use
+"_favorites"
+
+-NSArray *storedFavorites = something
+[storedFavorites mutableCopy]; // returns a mutable copy of the array
+[NSMutableArray array]; // creates and returns an empty array
+
+-Using userDefaults
+NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+NSArray *storedFavorites = [defaults objectForKey:@"favorites"];
+removeObjectForKey: // for removing an item
+if(storedFavorites)
+	self.favorites = [storedFavorites mutableCopy];
+else
+	self.favorites = [NSMutableArray array];
+	
+// saving
+[defaults setObject:self.favorites forKey:@"favorites"];
+[defaults synchronize]; // commits changes
+
+-Handy tableView methods
+
+// drag to re-order
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:
+
+// swipe to delete
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView commitEditingStyle:
+
+// height adjustment
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:
+
+
+//setting the back button to blank so only see the back arrow
+self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@" " style:UIBarButtonItemStylePlain target:nil action:nil];
+*this code will go in the parent viewController (the one we're going back to)
