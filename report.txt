@@ -1,5 +1,6 @@
+# bullet points and snippets about new things learned in this project
 
--another way of making sure the code gets initialized only once using a block
+-another way of making sure the code gets initialized only once using GCD
 
 +(instancetype)sharedFavoritesList{
     static FavoritesList *shared = nil;
