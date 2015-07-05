@@ -12,3 +12,4 @@ This app demonstrate the use of a number of fundamental components in UIKit and 
 
 
 inspired by Fonts in the Beginning iOS7 App Development book with some modifications such as navigationBar tint color and use of updated material instead of deprecated components such as UIAlertView.
+http://www.apress.com/9781430260226
